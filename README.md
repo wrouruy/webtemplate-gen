@@ -7,7 +7,6 @@
 <ul>
   <li>You can use from any directory</li>
   <li>Enter in console "wt-gen" and name files which you need</li>
-  <li>For example: </li>
-  ```wt-gen index.html style.css main.js```
+  <li>For example: <code> wt-gen index.html style.css main.js </code></li>
 </ul>
 <b>Enjoy your use🌟!</b>
