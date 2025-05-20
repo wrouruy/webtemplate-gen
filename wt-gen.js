@@ -7,26 +7,11 @@ const args = process.argv.slice(2);
 const extensions = [
     [
         '.html',
-        `<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-</head>
-<body>
-     
-</body>
-</html>`
+        `<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>Document</title>\n\n</head>\n<body>\n\n</body>\n</html>`
     ],
     [
         '.css',
-        `* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}`
+        `* {\n  margin: 0;\n    padding: 0;\n   box-sizing: border-box;\n}`
     ]
 ];
 
@@ -34,10 +19,10 @@ const extensions = [
 let htmlContent = extensions[0][1].split('\n');
 for (let i = 0; i < args.length; i++) {
     if (args[i].endsWith('.css')) {
-        htmlContent[6] += `<link rel="stylesheet" href="${args[i]}">`;
+        htmlContent[6] += `    <link rel="stylesheet" href="./${args[i]}">\n`;
     }
     if (args[i].endsWith('.js')) {
-        htmlContent[9] += `\n<script src="./${args[i]}"></script>`;
+        htmlContent[9] += `\n    <script src="./${args[i]}"></script>`;
     }
 }
 extensions[0][1] = htmlContent.join('\n');
